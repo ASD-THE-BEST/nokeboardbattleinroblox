@@ -81,9 +81,12 @@ local a = { -- 욕 리스트(원한다면 바꾸기) --
 	"씹새기야",
 	"찐따새기야",
 	"혈육사그리뒤진새기야",
-	"애미애비사그리죽은새기야"
+	"애미애비사그리죽은새기야",
+	"못배운새기야",
+	"시발병신새기야",
+	"비응신고아새기야"
 }
-local goon = 1
+local goon = 1.7
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
 	Name = "ASD",
@@ -130,11 +133,11 @@ local Slider = Tab:CreateSlider({
 	Name = "latency(말하는 간격)",
 	Range = {
 		0,
-		10
+		15
 	},
-	Increment = 1,
+	Increment = 0.1,
 	Suffix = "초",
-	CurrentValue = 1,
+	CurrentValue = 1.7,
 	Callback = function(Value)
 		goon = Value
 	end,
