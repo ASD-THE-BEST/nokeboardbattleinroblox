@@ -84,9 +84,10 @@ local a = { -- 욕 리스트(원한다면 바꾸기) --
 	"애미애비사그리죽은새기야",
 	"못배운새기야",
 	"시발병신새기야",
-	"비응신고아새기야"
+	"비응신고아새기야",
+	"맹인새기야"
 }
-local goon = 1.7
+local goon = 2
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
 	Name = "ASD",
@@ -137,33 +138,33 @@ local Slider = Tab:CreateSlider({
 	},
 	Increment = 0.1,
 	Suffix = "초",
-	CurrentValue = 1.7,
+	CurrentValue = 2,
 	Callback = function(Value)
 		goon = Value
 	end,
 })
 
-local Toggle = Tab:CreateToggle({
-	Name = "시작",
-	CurrentValue = false,
-	Callback = function(asdf)
-		getfenv().bishbashbosh = asdf
-		if not goon or goon == "" then
-			print("pls setting latency first :)")
-			return
-		end
-		if asdf then
-			task.spawn(function()
-				while getfenv().bishbashbosh do
-					task.wait(goon)
-					local b = ""
-					for c = 1, 5 do
-						local d = a[math.random(1, #a)]
-						b = b .. d
-					end
-					game.TextChatService.TextChannels.RBXGeneral:SendAsync(b)
-				end
-			end)
-		end
-	end,
+
+Tab:CreateToggle({
+    Name = "시작",
+    CurrentValue = false,
+    Callback = function(state)
+        getfenv().bishbashbosh = state
+        if state and not getfenv().looppppppppppp then
+            getfenv().looppppppppppp = true
+            task.spawn(function()
+                while getfenv().bishbashbosh do
+                    task.wait(goon)
+                    local b = ""
+                    for c = 1, 5 do
+                        b = b .. a[math.random(1, #a)]
+                    end
+                    if getfenv().bishbashbosh then
+                        game.TextChatService.TextChannels.RBXGeneral:SendAsync(b)
+                    end
+                end
+                getfenv().looppppppppppp = false
+            end)
+        end
+    end,
 })
