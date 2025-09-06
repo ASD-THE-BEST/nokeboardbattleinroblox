@@ -1,3 +1,5 @@
+local goon = 2
+local whoareyou = 5
 
 local a = { -- 욕 리스트(원한다면 바꾸기) --
 	"시발새기야",
@@ -85,9 +87,28 @@ local a = { -- 욕 리스트(원한다면 바꾸기) --
 	"못배운새기야",
 	"시발병신새기야",
 	"비응신고아새기야",
-	"맹인새기야"
+	"맹인새기야",
+	"개등신새기야",
+	"미친농아새기야",
+	"찌끄레기새기야",
+	"아둔한새기야",
+	"정신나간새기야",
+	"골빈새기야",
+	"머저리새기야",
+	"무뇌새기야",
+	"정신병자새기야",
+	"돌대가리새기야",
+	"스레기같은새기야",
+	"뇌없는새기야",
+	"무능한새기야",
+	"미친개새기야",
+	"둔한새기야",
+	"멍텅구리새기야",
+	"무지한새기야",
+	"천치새기야",
+	"어리석은새기야",
+	"후각장애인새기야"
 }
-local goon = 2
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
 	Name = "ASD",
@@ -131,10 +152,25 @@ local Label = Tab:CreateLabel("made by ASD with ❤️", "scroll", Color3.fromRG
 local Section = Tab:CreateSection("main")
 
 local Slider = Tab:CreateSlider({
+	Name = "말의 길이",
+	Range = {
+		1,
+		10
+	},
+	Increment = 1,
+	Suffix = "",
+	CurrentValue = 5,
+	Callback = function(Value)
+		whoareyou = Value
+	end,
+})
+
+
+local Slider = Tab:CreateSlider({
 	Name = "latency(말하는 간격)",
 	Range = {
 		0,
-		15
+		10
 	},
 	Increment = 0.1,
 	Suffix = "초",
@@ -156,7 +192,7 @@ Tab:CreateToggle({
                 while getfenv().bishbashbosh do
                     task.wait(goon)
                     local b = ""
-                    for c = 1, 5 do
+                    for c = 1, whoareyou do
                         b = b .. a[math.random(1, #a)]
                     end
                     if getfenv().bishbashbosh then
