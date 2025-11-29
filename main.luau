@@ -107,7 +107,10 @@ local a = { -- 욕 리스트(원한다면 바꾸기) --
 	"무지한새기야",
 	"천치새기야",
 	"어리석은새기야",
-	"후각장애인새기야"
+	"후각장애인새기야",
+	"어리석은새기야",
+	"일베충새기야",
+	"애비일베하는새기야"
 }
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
@@ -185,22 +188,14 @@ Tab:CreateToggle({
     Name = "시작",
     CurrentValue = false,
     Callback = function(state)
-        getfenv().bishbashbosh = state
-        if state and not getfenv().looppppppppppp then
-            getfenv().looppppppppppp = true
-            task.spawn(function()
-                while getfenv().bishbashbosh do
-                    task.wait(goon)
-                    local b = ""
-                    for c = 1, whoareyou do
-                        b = b .. a[math.random(1, #a)]
-                    end
-                    if getfenv().bishbashbosh then
-                        game.TextChatService.TextChannels.RBXGeneral:SendAsync(b)
-                    end
-                end
-                getfenv().looppppppppppp = false
-            end)
+		getfenv().ok = state
+		while getfenv().ok do
+			task.wait(goon)
+			local b = ""
+			for c = 1, whoareyou do
+				b = b .. a[math.random(1, #a)]
+			end
+			game.TextChatService.TextChannels.RBXGeneral:SendAsync(b)
         end
     end,
 })
